@@ -1,6 +1,7 @@
 library(tidyverse)
 load("rda/murders.rda")
 
+# Makes the plot
 murders %>% mutate(abb = reorder(abb, rate)) %>%
   ggplot(aes(abb, rate)) +
   geom_bar(width = 0.5, stat = "identity", color = "black") +
